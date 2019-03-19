@@ -1,0 +1,61 @@
+		html, body, div, span, iframe,
+		h1, h2, h3, h4, h5, h6, p, 
+		em, img,strong,var,b, i,
+		dl, dt, dd, ol, ul, li,
+		form, label,input,select,textarea, 
+		table, caption, tbody, tfoot, thead, tr, th, td
+		{
+		    margin:0;
+		    padding:0;
+		    border:0;
+		    outline:0;
+		    font-size:100%;
+		    background:transparent;
+		  	font-family: "Microsoft Yahei";
+		}
+		a{
+			font-family: "Microsoft Yahei";
+			text-decoration: none;
+		}
+		html , body {
+			height: 100%;
+			width: 100%;
+		}
+		ul , ol{
+		    list-style:none;
+		}
+		a{
+			color:#000;
+			text-decoration: none;
+		}
+		a img{
+			border:none;
+		}
+		.clear:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		#box4 a{
+			color: #06F;
+	text-decoration:underline;
+		}
+		table{
+			border:0px;
+			margin:auto;
+			}
+		th,td{
+	margin:auto;
+	text-align:center;
+	padding:7px 7px 7px 7px;
+    border: 1px solid #ddd;
+		}
+		table a{color: #06F;
+		text-decoration:underline;
+		}
+		#errorList tr.alt td
+		{color:#000000;
+		background-color:#ddd;
+		}
+		
+		

@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #555;
+}
+
+.content {
+    width: 450px;
+    height: 330px;
+    background: #999;
+    border-radius: 10px;
+    margin: 10% auto;
+}
+
+header {
+    border-bottom: 2px solid #fff;
+    width: 450px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 26px;
+    color: #FAFAFA;
+}
+
+.user {
+    width: 450px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    margin-top: 20px;
+    color: #FAFAFA;
+}
+.pwd {
+    width: 450px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.login {
+    width: 450px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+input {
+    height: 25px;
+}

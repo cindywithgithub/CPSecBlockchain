@@ -1,0 +1,22 @@
+.layui-logo img{
+	width: 540px;
+    height: 56px;
+}
+.layui-side .layui-nav-item a{
+	padding-left: 10px;
+	/*text-indent: 10px;*/
+}
+.layui-side .layui-nav-item i{
+	vertical-align: middle;
+	margin-right: 5px;
+	font-size: 24px;
+}
+.layui-side .layui-nav-item dd a{
+	padding-left: 15px;
+}
+.layui-side .layui-nav-item dd i{
+	font-size: 14px;
+}
+
+
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="base/css/layui.css">
+    <link rel="stylesheet" href="base/bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/table.css"> -->
+    <script type="text/javascript" src="base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="base/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="base/layui.js"></script>
+    <style>
+    .layui-tab-content {
+        padding: 0 10px;
+    }
+    .handle{
+        min-width: 125px;
+    }
+    .box{
+        width: 1100px;
+        /*margin: 20px auto;*/
+    }
+    .form-control{
+        display: inline-block;
+    }
+    .box .form-horizontal .form-group{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    #imgHash,#imgHash1{
+        width: 500px;
+    }
+    #imgHash2{
+        width: 500px;
+    }
+    td:first-child{   
+        background: #f2f2f2;
+    }
+    #userTable{
+        width: 650px;
+    }
+    #userTable td{
+        padding: 2px 10px;
+    }
+    #userTable td:first-child {
+        width: 168px;
+    }
+    
+    #userTable1{
+        width: 650px;
+    }
+    #userTable1 td:first-child {
+        width: 157px;
+        background: #f2f2f2;
+    }
+    td:nth-child(2){
+        width: 350px;
+    }
+    #img{
+        position: absolute;
+        top: 39px;
+        right: 10px;
+    }
+    #img img{
+        display: block;
+        width: 460px;
+        height: 540px;
+    }
+    #t3,#t4{
+        /*width: 257px;*/
+        display: inline-block;
+        margin-top: 5px;
+        padding: 0;
+        overflow: hidden;
+    }
+    #t3 table{
+        margin-top: 0;
+    }
+    #t3 table :nth-child(2){
+        text-align: center;
+    }
+    /*#t3 td:nth-child(1),#t4 td:nth-child(1){
+        width: 180px;
+    }*/
+    .title2{
+        width: 250px;
+        margin: 0;
+        font-size: 14px;
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+    }
+    #userTable td:nth-child(2){
+        max-width: 480px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <p>Ethereum Contract address：0xb752ffa78d7634c0901df669d3f1fabab5057a76</p>
+        <p>ImageHash in IPFS: QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p>
+        <p>ImageHash in DRMChain: QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p>
+        <p>BlockHash in DRMChain: 0xc2e576cb66cdaf6ab2ef0f8c1037115cef22d2ada0f616495214e4b1d9b76a7c</p>
+        <p>IPFS Address  https://ipfs.io/ipfs/QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p> -->
+        <form class="form-horizontal">
+            <!-- <div class="form-group">
+                <label for="" class="">Upload pictures to IPFS:</label>
+                <input type="text" class="form-control" id="imgHash" placeholder="Please upload pictures">
+                <button type="button" style="display: inline-block;" class="btn btn-primary">upload</button>
+            </div>
+            <div class="form-group">
+                <label for="" class="">imgHash：</label>
+                <input type="text" class="form-control" id="imgHash1" value="QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg" disabled>
+                <button type="button" style="display: inline-block;" class="btn btn-primary">Write the hash to the blockchain</button>
+            </div>
+            <div class="form-group">
+                <label for="" class="">The hash value read from the blockchain：</label>
+                <input type="text" class="form-control" id="imgHash2" value="QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg" disabled>
+            </div> -->
+        </form>
+        <h4>【摘要信息】</h4>
+        <table id="userTable1" class="layui-table layui-fluid" lay-size="sm">
+            <tr>
+                <td>Ethereum Contract address</td>
+                <td>0xb752ffa78d7634c0901df669d3f1fabab5057a76</td>
+            </tr>
+            <tr>
+                <td>ImageHash in IPFS</td>
+                <td>QmZ926YJNgg2rW6jBFRaegk5mvfzaMPKd7tqUyZb2c3MS2</td>
+            </tr>
+            <tr>
+                <td>ImageHash in DRMChain</td>
+                <td>QmZ926YJNgg2rW6jBFRaegk5mvfzaMPKd7tqUyZb2c3MS2</td>
+            </tr>
+            <tr>
+                <td>IPFS Address</td>
+                <td>https://ipfs.io/ipfs/QmZ926YJNgg2rW6jBFRaegk5mvfzaMPKd7tqUyZb2c3MS2</td>
+            </tr>
+            <tr>
+                <td>BlockHash in DRMChain</td>
+                <td>0xe0010353e960e50dcad4d1ca5f30b56fdf749212157402c722e25b5385c1ab96</td>
+            </tr>
+        </table>
+        <h4>【区块信息】</h4>
+        <table id="userTable" class="layui-table layui-fluid" lay-size="sm">
+            <thead class="layui-bg-gray">
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="img">
+            <img src="images/4.jpg" alt="">   
+            <!-- <div  id="t3">
+                <span class="title2">CPSecWatermark Rights Information</span>
+                <table id="table3" class="layui-table layui-fluid" lay-size="sm">
+                    <tr>
+                        <td>Platform</td>
+                        <td>DRMChain</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Institute</td>
+                        <td>bupt.edu.cn</td>
+                    </tr>
+                    <tr>
+                        <td>Processed by</td>
+                        <td>Ma Zhaofeng</td>
+                    </tr>
+                    <tr>
+                        <td>Timestamp</td>
+                        <td>2018-01-16 09:25:44</td>
+                    </tr>
+                </table> 
+            </div> -->
+            <!-- <div id="t4">
+                <span class="title2">CPSecImageExplorer Encryption License</span>
+                <table id="table4" class="layui-table layui-fluid" lay-size="sm">
+                    <tr>
+                        <td>Total Play Times</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Authentication</td>
+                        <td>Password</td>
+                    </tr>
+                    <tr>
+                        <td>Export Rights</td>
+                        <td>YES</td>
+                    </tr>
+                    <tr>
+                        <td>Per Usage Fee</td>
+                        <td>20 DAC</td>
+                    </tr>
+                </table>
+            </div> -->                
+        </div>
+    </div>
+    <div>
+        <span id="layPage"></span>
+    </div>
+    <script>
+    layui.config({
+        base: '/base/lay/modules/'
+    }).use(['element','form','layer','laypage','table'], function() {
+        var element = layui.element;
+        var table = layui.table;
+        var layer = layui.layer;
+        var laypage = layui.laypage;
+
+        //表格
+        table.render({
+            elem: 'userTable,userTable1,table3,table4',            
+        })
+
+        var data = {"difficulty":"2418272","extraData":"0xd583010703846765746885676f312e39856c696e7578","gasLimit":4712388,"gasUsed":0,"hash":"0xa23db8ae6e56cb455eb207933434e12d78ff3a4eb8b1c2add595522b3d172c4d","logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","miner":"0xef17fb45b8433a249a073e118581638cc8575d27","mixHash":"0xf185bfae68f0358247722d5e8a79c390de9736289642de1e1aa5e8a31736e4cb","nonce":"0x4f1665d944029e3b","number":126569,"parentHash":"0x014f9c25cdf7c59ce5727311840cffcfe6acc848c85c4ca4cac0441bb66fe716","receiptsRoot":"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421","sha3Uncles":"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347","size":536,"stateRoot":"0x5143692252569d335de53f7122a63df298b0534017aa921d826f28ec08ac8425","timestamp":1516885957,"totalDifficulty":"179492430853","transactions":[],"transactionsRoot":"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421","uncles":[]};
+
+        
+        $("#userTable tbody").html("")
+        for(key in data){  
+            $("#userTable tbody").append('<tr><td>'+key+'</td><td>'+data[key]+'</td></tr>')
+        }  
+        var length  = Object.keys(data).length ;
+        
+    });
+    </script>
+</body>
+</html>

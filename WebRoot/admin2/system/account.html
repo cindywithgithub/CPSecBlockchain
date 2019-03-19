@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../base/css/layui.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" src="../base/layui.js"></script>
+    <style>
+    table{
+        min-width: 1100px;
+    }
+    tr,th{
+        text-align: center !important;
+    }
+    td:first-child{
+        background: #f2f2f2;
+    }
+    #layPage div{
+        margin-left: 30%;
+    }
+    </style>
+</head>
+<body>
+    <blockquote class="layui-elem-quote">
+        <h1>账号管理</h1>
+    </blockquote>
+    <button class="layui-btn layui-btn-normal">添加用户</button>
+    <table id="userTable" class="layui-table layui-fluid" lay-size="sm">
+        <thead class="layui-bg-gray">
+            <tr class="">
+                <th >序号</th>
+                <th >用户名</th>
+                <th >用户密码</th>
+                <th >角色名称</th>
+                <th >操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>admin</td>
+                <td>admin</td>
+                <td>系统管理员</td>
+                <td>
+                    <button class="layui-btn layui-btn-norma layui-btn-small">修改</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-small">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>admin</td>
+                <td>admin</td>
+                <td>编辑</td>
+                <td>
+                    <button class="layui-btn layui-btn-norma layui-btn-small">修改</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-small">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>admin</td>
+                <td>admin</td>
+                <td>审批</td>
+                <td>
+                    <button class="layui-btn layui-btn-norma layui-btn-small">修改</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-small">删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <span id="layPage"></span>
+        每页
+        <input id="page_size" type="number" min="1" value="1" class="layui-input" style="width: 60px; height: 30px; display: inline;">
+        行,
+    </div>
+    <!-- 添加用户权限表单 -->
+    <form action="">
+        
+    </form>
+    <script type="text/javascript" src="../js/user.js"></script>
+</body>
+</html>

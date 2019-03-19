@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="base/css/layui.css">
+    <link rel="stylesheet" href="base/bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/table.css"> -->
+    <script type="text/javascript" src="base/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="base/layui.js"></script>
+    <style>
+    .layui-tab-content {
+        padding: 0 10px;
+    }
+    .handle{
+        min-width: 125px;
+    }
+    .box{
+        width: 1100px;
+        /*margin: 20px auto;*/
+    }
+    .form-control{
+        display: inline-block;
+    }
+    .box .form-horizontal .form-group{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    #imgHash,#imgHash1{
+        width: 500px;
+    }
+    #imgHash2{
+        width: 500px;
+    }
+    td:first-child{   
+        background: #f2f2f2;
+    }
+    #userTable{
+        width: 650px;
+    }
+    #userTable td{
+        padding: 2px 10px;
+    }
+    #userTable td:first-child {
+        width: 159px;
+    }
+    #userTable1{
+        width: 650px;
+    }
+    #userTable1 td:first-child {
+        width: 157px;
+        background: #f2f2f2;
+    }
+    td:nth-child(2){
+        width: 400px;
+    }
+    #img{
+        position: absolute;
+        top: 39px;
+        right: 10px;
+    }
+    #img img{
+        display: block;
+        width: 520px;
+        height: 490px;
+    }
+    #t3,#t4{
+        /*width: 257px;*/
+        display: inline-block;
+        margin-top: 5px;
+        padding: 0;
+        overflow: hidden;
+    }
+    #t4 table{
+        margin-top: 5px;
+    }
+    /*#mask{
+        width: 520px;
+        height: 490px;
+        background-color: rgba(0,0,0,0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+    }*/
+    #t4 table :nth-child(2){
+        text-align: center;
+    }
+    /*#t3 td:nth-child(1),#t4 td:nth-child(1){
+        width: 180px;
+    }*/
+    .title2{
+        width: 250px;
+        margin: 0;
+        font-size: 14px;
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <p>Ethereum Contract address：0xb752ffa78d7634c0901df669d3f1fabab5057a76</p>
+        <p>ImageHash in IPFS: QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p>
+        <p>ImageHash in DRMChain: QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p>
+        <p>BlockHash in DRMChain: 0xc2e576cb66cdaf6ab2ef0f8c1037115cef22d2ada0f616495214e4b1d9b76a7c</p>
+        <p>IPFS Address  https://ipfs.io/ipfs/QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p> -->
+        <form class="form-horizontal">
+            <!-- <div class="form-group">
+                <label for="" class="">Upload pictures to IPFS:</label>
+                <input type="text" class="form-control" id="imgHash" placeholder="Please upload pictures">
+                <button type="button" style="display: inline-block;" class="btn btn-primary">upload</button>
+            </div>
+            <div class="form-group">
+                <label for="" class="">imgHash：</label>
+                <input type="text" class="form-control" id="imgHash1" value="QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg" disabled>
+                <button type="button" style="display: inline-block;" class="btn btn-primary">Write the hash to the blockchain</button>
+            </div>
+            <div class="form-group">
+                <label for="" class="">The hash value read from the blockchain：</label>
+                <input type="text" class="form-control" id="imgHash2" value="QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg" disabled>
+            </div> -->
+        </form>
+        <h4>Summary</h4>
+        <table id="userTable1" class="layui-table layui-fluid" lay-size="sm">
+            <tr>
+                <td>Ethereum Contract address</td>
+                <td>0xb752ffa78d7634c0901df669d3f1fabab5057a76</td>
+            </tr>
+            <tr>
+                <td>ImageHash in IPFS</td>
+                <td>QmZ926YJNgg2rW6jBFRaegk5mvfzaMPKd7tqUyZb2c3MS2</td>
+            </tr>
+            <tr>
+                <td>ImageHash in DRMChain</td>
+                <td>QmZ926YJNgg2rW6jBFRaegk5mvfzaMPKd7tqUyZb2c3MS2</td>
+            </tr>
+            <tr>
+                <td>IPFS Address</td>
+                <td>https://ipfs.io/ipfs/QmZ926YJNgg2rW6jBFRaegk5mvfzaMPKd7tqUyZb2c3MS2</td>
+            </tr>
+            <tr>
+                <td>BlockHash in DRMChain</td>
+                <td>0xe0010353e960e50dcad4d1ca5f30b56fdf749212157402c722e25b5385c1ab96</td>
+            </tr>
+        </table>
+        <h4>BlockInfo</h4>
+        <table id="userTable" class="layui-table layui-fluid" lay-size="sm">
+            <thead class="layui-bg-gray">
+            </thead>
+            <tbody>
+                <tr>
+                    <td>difficulty</td>
+                    <td>699673</td>
+                </tr>
+                <tr>
+                    <td>extraData</td>
+                    <td>0xd583010703846765746885676f312e39856c696e7578</td>
+                </tr>
+                <tr>
+                    <td>gasLimit</td>
+                    <td>4712388</td>
+                </tr>
+                <tr>
+                    <td>gasUsed</td>
+                    <td>40906</td>
+                </tr>
+                <tr>
+                    <td>hash</td>
+                    <td>0xd56452b643406e66e4f1bdb4a672e282ad66076a73d976e01cbbd4069080167d</td>
+                </tr>
+                <tr>
+                    <td>logsBloom</td>
+                    <td>0x0</td>
+                </tr>
+                <tr>
+                    <td>miner</td>
+                    <td>0xef17fb45b8433a249a073e118581638cc8575d27</td>
+                </tr>
+                <tr>
+                    <td>mixHash</td>
+                    <td>0xbbefe2b6c8627fe92e97a8551adf0068ce4ff030e01b82cb97d2ac6051b23140</td>
+                </tr>
+                <tr>
+                    <td>nonce</td>
+                    <td>0x4f9878dbe2f971b2</td>
+                </tr>
+                <tr>
+                    <td>number</td>
+                    <td>73577</td>
+                </tr>
+                <tr>
+                    <td>parentHash</td>
+                    <td>0x1cff7048eec4070786b41157cf2e0b42fda2cd081b44a6ee1e213427c6fae4c2</td>
+                </tr>
+                <tr>
+                    <td>receiptsRoot</td>
+                    <td>0x316fa5f99eab2e59c5715414a53f9b9d99cc8def2fd7155755573d090684fca8</td>
+                </tr>
+                <tr>
+                    <td>sha3Uncles</td>
+                    <td>0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>773</td>
+                </tr>
+                <tr>
+                    <td>stateRoot</td>
+                    <td>0x3a0ba709007eed30d2e713c36d62b82bc38bff58fb3a4031a2162cb36729c7d0</td>
+                </tr>
+                <tr>
+                    <td>timestamp</td>
+                    <td>1516069740</td>
+                </tr>
+                <tr>
+                    <td>totalDifficulty</td>
+                    <td>51362658587</td>
+                </tr>
+                <tr>
+                    <td>transactions</td>
+                    <td>0x57f3cd4bd0829540e7318ec5d893a07dde440f16f0ec8b7bb4a4833ff14e1146</td>
+                </tr>
+                <tr>
+                    <td>transactionsRoot</td>
+                    <td>0xc8b43faff7eea5c717d19440e37615b7361cc3f692eaebf27f9aeee2604c1658</td>
+                </tr>
+                <tr>
+                    <td>uncles</td>
+                    <td>[]</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="img">
+           <!--  <div id="mask">
+                <span id="" class="glyphicon glyphicon-play-circle"></span>
+            </div> -->
+            <img src="images/2.jpg" alt="">   
+            <div id="t4">
+                <span class="title2">CPSecPlayer Encryption License</span>
+                <table id="table4" class="layui-table layui-fluid" lay-size="sm">
+                    <tr>
+                        <td>Total Play Times</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Authentication</td>
+                        <td>Password</td>
+                    </tr>
+                    <tr>
+                        <td>Export Rights</td>
+                        <td>YES</td>
+                    </tr>
+                    <tr>
+                        <td>Per Usage Fee</td>
+                        <td>20 DAC</td>
+                    </tr>
+                </table>
+            </div>               
+        </div>
+    </div>
+    <div>
+        <span id="layPage"></span>
+    </div>
+    <script>
+    layui.config({
+        base: '/base/lay/modules/'
+    }).use(['element','form','layer','laypage','table'], function() {
+        var element = layui.element;
+        var table = layui.table;
+        var layer = layui.layer;
+        var laypage = layui.laypage;
+
+        //表格
+        table.render({
+            elem: 'userTable,userTable1,table3,table4',            
+        })
+    });
+    </script>
+</body>
+</html>

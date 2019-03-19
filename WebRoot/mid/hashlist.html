@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="base/css/layui.css">
+    <link rel="stylesheet" href="base/bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/table.css"> -->
+    <script type="text/javascript" src="base/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="base/layui.js"></script>
+    <style>
+    .handle{
+        min-width: 125px;
+    }
+    .box{
+        width: 1100px;
+        /*margin: 20px auto;*/
+    }
+    .form-control{
+        display: inline-block;
+    }
+    .box .form-horizontal .form-group{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    #imgHash,#imgHash1{
+        width: 500px;
+    }
+    #imgHash2{
+        width: 500px;
+    }
+    #userTable{
+        width: 650px;
+    }
+    #userTable td{
+        padding: 2px 10px;
+    }
+    #userTable td:first-child {
+        width: 159px;
+        background: #f2f2f2;
+    }
+    #userTable1{
+        width: 650px;
+    }
+    #userTable1 td:first-child {
+        width: 157px;
+        background: #f2f2f2;
+    }
+    td:nth-child(2){
+        width: 400px;
+    }
+    #img{
+        position: absolute;
+        top: 39px;
+        right: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <p>Ethereum Contract address：0xb752ffa78d7634c0901df669d3f1fabab5057a76</p>
+        <p>ImageHash in IPFS: QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p>
+        <p>ImageHash in DRMChain: QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p>
+        <p>BlockHash in DRMChain: 0xc2e576cb66cdaf6ab2ef0f8c1037115cef22d2ada0f616495214e4b1d9b76a7c</p>
+        <p>IPFS Address  https://ipfs.io/ipfs/QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</p> -->
+        <form class="form-horizontal">
+            <!-- <div class="form-group">
+                <label for="" class="">Upload pictures to IPFS:</label>
+                <input type="text" class="form-control" id="imgHash" placeholder="Please upload pictures">
+                <button type="button" style="display: inline-block;" class="btn btn-primary">upload</button>
+            </div>
+            <div class="form-group">
+                <label for="" class="">imgHash：</label>
+                <input type="text" class="form-control" id="imgHash1" value="QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg" disabled>
+                <button type="button" style="display: inline-block;" class="btn btn-primary">Write the hash to the blockchain</button>
+            </div>
+            <div class="form-group">
+                <label for="" class="">The hash value read from the blockchain：</label>
+                <input type="text" class="form-control" id="imgHash2" value="QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg" disabled>
+            </div> -->
+        </form>
+        <h4>Summary</h4>
+        <table id="userTable1" class="layui-table layui-fluid" lay-size="sm">
+            <tr>
+                <td>Ethereum Contract address</td>
+                <td>0xb752ffa78d7634c0901df669d3f1fabab5057a76</td>
+            </tr>
+            <tr>
+                <td>ImageHash in IPFS</td>
+                <td>QmfTvwWbr1TPhk2wfmFwcfRhqVLR67vuvvsX1Qfj4KHNWW</td>
+            </tr>
+            <tr>
+                <td>ImageHash in DRMChain</td>
+                <td>QmfTvwWbr1TPhk2wfmFwcfRhqVLR67vuvvsX1Qfj4KHNWW</td>
+            </tr>
+            <tr>
+                <td>IPFS Address</td>
+                <td>https://ipfs.io/ipfs/QmfTvwWbr1TPhk2wfmFwcfRhqVLR67vuvvsX1Qfj4KHNWW</td>
+            </tr>
+            <tr>
+                <td>BlockHash in DRMChain</td>
+                <td>0x1a68da3055a285a1851025316961a53d3f5b001ffc2422610dcbdc0474af1cbc</td>
+            </tr>
+        </table>
+        <h4>BlockInfo</h4>
+        <table id="userTable" class="layui-table layui-fluid" lay-size="sm">
+            <thead class="layui-bg-gray"></thead>
+            <tbody>
+                <tr>
+                    <td>difficulty</td>
+                    <td>709211</td>
+                </tr>
+                <tr>
+                    <td>extraData</td>
+                    <td>0xd583010703846765746885676f312e39856c696e7578</td>
+                </tr>
+                <tr>
+                    <td>gasLimit</td>
+                    <td>4712388</td>
+                </tr>
+                <tr>
+                    <td>gasUsed</td>
+                    <td>40906</td>
+                </tr>
+                <tr>
+                    <td>hash</td>
+                    <td>0xd2fc277c402dc6071de9e3477fa9c0d0294e3116c66bd3f55b58588642260ea2</td>
+                </tr>
+                <tr>
+                    <td>logsBloom</td>
+                    <td>0x0</td>
+                </tr>
+                <tr>
+                    <td>miner</td>
+                    <td>0xef17fb45b8433a249a073e118581638cc8575d27</td>
+                </tr>
+                <tr>
+                    <td>mixHash</td>
+                    <td>0x1e86c90d0d580db16678d3b90d82a7e4f420d45e73b3a5ed0eb72e0a9a7bfa5d</td>
+                </tr>
+                <tr>
+                    <td>nonce</td>
+                    <td>0x3296ab595d7d8cd1</td>
+                </tr>
+                <tr>
+                    <td>number</td>
+                    <td>69793</td>
+                </tr>
+                <tr>
+                    <td>parentHash</td>
+                    <td>0x3ee6c9867f76c31f27f0a4947a96ab1eed01f63a4609de17e7062e25437428a7</td>
+                </tr>
+                <tr>
+                    <td>receiptsRoot</td>
+                    <td>0x050766ba2cae3a6293df1ea5f9841f9c0ada7ee0e14d2287424d9148292bdfad</td>
+                </tr>
+                <tr>
+                    <td>sha3Uncles</td>
+                    <td>0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>773</td>
+                </tr>
+                <tr>
+                    <td>stateRoot</td>
+                    <td>0xd2cada3dafbe5e8e61320a04acaa7c59954d38c95014580ff5d38fb96bd162a6</td>
+                </tr>
+                <tr>
+                    <td>timestamp</td>
+                    <td>1516015922</td>
+                </tr>
+                <tr>
+                    <td>totalDifficulty</td>
+                    <td>48699331240</td>
+                </tr>
+                <tr>
+                    <td>transactions</td>
+                    <td>0x3d0545eb192432829f95409f10038f76d97866b5a2faa5032bbd9fc37ac94bb2</td>
+                </tr>
+                <tr>
+                    <td>transactionsRoot</td>
+                    <td>0xd4ebb86ef6c7fd442aa2165462c7cbb350a88544b3a06562c05663d7e8495d22</td>
+                </tr>
+                <tr>
+                    <td>uncles</td>
+                    <td>[]</td>
+                </tr>
+            </tbody>
+        </table>
+        <img id="img" src="images/2.jpg" alt="">
+    </div>
+    <div>
+        <span id="layPage"></span>
+    </div>
+    <script>
+    layui.config({
+        base: '/base/lay/modules/'
+    }).use(['element','form','layer','laypage','table'], function() {
+        var element = layui.element;
+        var table = layui.table;
+        var layer = layui.layer;
+        var laypage = layui.laypage;
+
+        //表格
+        table.render({
+            elem: 'userTable,userTable1',            
+        })
+
+        // table.render({
+        //     elem: 'userTable1',            
+        // })
+        //分页
+        // laypage.render({
+        //     elem: 'layPage'     //分页容器的id
+        //     ,layout: ['prev', 'page', 'next','limits','count']  //排版
+        //     ,limit: 10      //每页显示数 
+        //     ,limits: [10, 20, 30, 40, 50]   //条数选择项
+        //     /*,curr: location.hash.replace('#!fenye=', '') //获取起始页
+        //     ,hash: '1' //自定义hash值*/
+        //     ,groups: 3      //连续出现的页数
+        //     ,count: 100     //总条数
+        //     ,theme: '#1E9FFF'   //自定义选中色值
+        //     ,skip: true     //开启跳页
+        //     ,jump: function(obj, first){
+        //         // if(!first){
+        //        //   layer.msg('第'+ obj.curr +'页');
+        //         // }
+        //     }
+        // });
+    });
+    </script>
+</body>
+</html>

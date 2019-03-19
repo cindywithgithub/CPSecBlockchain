@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="base/css/layui.css">
+    <link rel="stylesheet" href="base/bootstrap/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/table.css"> -->
+    <script type="text/javascript" src="base/layui.js"></script>
+    <script type="text/javascript" src="base/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="base/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/interfaceUrl.js"></script> -->
+    <style>
+
+    #layPage{
+        width: 500px;
+        height: 50px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #layPage div {
+        margin: 20px 0 0 ;
+    }
+    table#userTable{
+        width: 800px !important;
+        margin: 15px auto 0;
+        padding: 0;
+    }
+    td:nth-child(3),td:nth-child(4),td:nth-child(5){
+        width: 300px;
+    }
+    </style>
+</head>
+<body>
+    <table id="userTable" class="layui-table layui-fluid" lay-size="sm" style="width: 800px ">
+        <thead class="layui-bg-gray">
+            <tr class="">
+                <th >number</th>
+                <th >file name</th>
+                <th >IPFS-Hash</th>
+                <th >Blockchain-Hash</th>
+                <th >IPFS-Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>hash.png</td>
+                <td>QmRD9nrgrP41jZUeMRzoAmzG8AXPb6GKu2VPHW9b1PQKNh</td>
+                <td>0xc2e576cb66cdaf6ab2ef0f8c1037115cef22d2ada0f616495214e4b1d9b76a7c</td>
+                <td>https://ipfs.io/ipfs/QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>hash.png</td>
+                <td>imgHash：QmRD9nrgrP41jZUeMRzoAmzG8AXPb6GKu2VPHW9b1PQKNh</td>
+                <td>0xd2fc277c402dc6071de9e3477fa9c0d0294e3116c66bd3f55b58588642260ea2</td>
+                <td>https://ipfs.io/ipfs/QmRD9nrgrP41jZUeMRzoAmzG8AXPb6GKu2VPHW9b1PQKNh</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>hash.png</td>
+                <td>imgHash：QmZDrmHNbK463JWC5CZ6Tox52EJgVRtLRKTzbKwE7GkdGy</td>
+                <td>0x024d5bed4614d70b680127b8417fb59ba4aaf4a1f25b8f4e2a78f11db12e4539</td>
+                <td>https://ipfs.io/ipfs/QmZDrmHNbK463JWC5CZ6Tox52EJgVRtLRKTzbKwE7GkdGy</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>hash.png</td>
+                <td>QmPiz34LxGkT5G6qvDuXvk2i8gzGUTHceCAMfaRbaPuELa</td>
+                <td>0xe63868d5ddbb6eea6c11294451217856bd8b59ef5c0fd0e1078e15f207ca24df</td>
+                <td>https://ipfs.io/ipfs/QmPiz34LxGkT5G6qvDuXvk2i8gzGUTHceCAMfaRbaPuELa</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>hash.png</td>
+                <td>QmYagfQekkzguJnyXMNbsemSBuYyxnfGGfot4f39TvXcz3</td>
+                <td>0x661b9f085a84c97ff6d8ca0f37b14712badd1a10ddd45afa085280e4507595f4</td>
+                <td>https://ipfs.io/ipfs/QmYagfQekkzguJnyXMNbsemSBuYyxnfGGfot4f39TvXcz3</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>hash.png</td>
+                <td>QmeyXkzTUM7CqpCukiCkdpSq1NkxAwALS78Uw8dqdqGHnJ</td>
+                <td>0x67386e3450ad60f05f10a99e76c4f3a47e0195a3235c1207debb65d16a00407f</td>
+                <td>https://ipfs.io/ipfs/QmeyXkzTUM7CqpCukiCkdpSq1NkxAwALS78Uw8dqdqGHnJ</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>hash.png</td>
+                <td>QmSgqisE2QkcoFgyxJWNNrVghb5Er8Ed9gLnaYGyuHt2wH</td>
+                <td>0x322cc3a007776951c18bdfbd25f2aaa8c0c05918c65466e880958ea376212641</td>
+                <td>https://ipfs.io/ipfs/QmSgqisE2QkcoFgyxJWNNrVghb5Er8Ed9gLnaYGyuHt2wH</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>hash.png</td>
+                <td>QmXp2uTfeBCSc2u9KoRpDd9t1bfCEzGfqa2eYbdxUf2kkK</td>
+                <td>QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</td>
+                <td>https://ipfs.io/ipfs/QmXp2uTfeBCSc2u9KoRpDd9t1bfCEzGfqa2eYbdxUf2kkK</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>hash.png</td>
+                <td>QmbRMjknFEkuFPhaSjrhQivnxoHfwKHCEyRTGxNZAQQXHd</td>
+                <td>QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</td>
+                <td>https://ipfs.io/ipfs/QmbRMjknFEkuFPhaSjrhQivnxoHfwKHCEyRTGxNZAQQXHd</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>hash.png</td>
+                <td>QmeYDYYgaNDBVow3FEqctV91ThnP3moQCUgdRj4xozsXTj</td>
+                <td>QmT81Rfaw5DGi1d8tYvE8RCWSd2d784avkAh6FJZ4yrGUg</td>
+                <td>https://ipfs.io/ipfs/QmeYDYYgaNDBVow3FEqctV91ThnP3moQCUgdRj4xozsXTj</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <span id="layPage"></span>
+    </div>
+    <script>
+    layui.config({
+        base: '/base/lay/modules/'
+    }).use(['element','form','layer','laypage','table'], function() {
+        var element = layui.element;
+        var table = layui.table;
+        var layer = layui.layer;
+        var laypage = layui.laypage;
+
+        //表格
+        table.render({
+            elem: 'userTable',
+            
+        })
+
+        //分页
+        laypage.render({
+            elem: 'layPage'     //分页容器的id
+            ,layout: ['prev', 'page', 'next','limits','count']  //排版
+            ,limit: 10      //每页显示数 
+            ,limits: [10, 20, 30, 40, 50]   //条数选择项
+            /*,curr: location.hash.replace('#!fenye=', '') //获取起始页
+            ,hash: '1' //自定义hash值*/
+            ,groups: 3      //连续出现的页数
+            ,count: 100     //总条数
+            ,theme: '#1E9FFF'   //自定义选中色值
+            ,skip: true     //开启跳页
+            ,jump: function(obj, first){
+                // if(!first){
+               //   layer.msg('第'+ obj.curr +'页');
+                // }
+            }
+        });
+    });
+    </script>
+</body>
+</html>

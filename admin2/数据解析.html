@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="base/jquery-3.2.1.min.js"></script>
+    <style>
+    #userTable{
+        width: 650px;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+    #userTable td{
+        padding: 2px 10px;
+        border: 1px solid #e2e2e2;
+        position: relative;
+        min-height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+    }
+    td:first-child{   
+        background: #f2f2f2;
+    }
+    #userTable td:first-child {
+        width: 159px;
+    }
+    #userTable td:nth-child(2){     /* 设置最大长度，超出显示省略号。。。 */
+        max-width: 480px;   
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+    }
+    </style>
+</head>
+<body>
+
+    <h4>BlockInfo</h4>
+    <table id="userTable" class="layui-table layui-fluid">
+        <thead class="layui-bg-gray">
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var data = {"difficulty":"2418272","extraData":"0xd583010703846765746885676f312e39856c696e7578","gasLimit":4712388,"gasUsed":0,"hash":"0xa23db8ae6e56cb455eb207933434e12d78ff3a4eb8b1c2add595522b3d172c4d","logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","miner":"0xef17fb45b8433a249a073e118581638cc8575d27","mixHash":"0xf185bfae68f0358247722d5e8a79c390de9736289642de1e1aa5e8a31736e4cb","nonce":"0x4f1665d944029e3b","number":126569,"parentHash":"0x014f9c25cdf7c59ce5727311840cffcfe6acc848c85c4ca4cac0441bb66fe716","receiptsRoot":"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421","sha3Uncles":"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347","size":536,"stateRoot":"0x5143692252569d335de53f7122a63df298b0534017aa921d826f28ec08ac8425","timestamp":1516885957,"totalDifficulty":"179492430853","transactions":[],"transactionsRoot":"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421","uncles":[]};
+
+        
+        $("#userTable tbody").html("")
+        for(key in data){  
+            $("#userTable tbody").append('<tr><td>'+key+'</td><td>'+data[key]+'</td></tr>')
+        }  
+        var length  = Object.keys(data).length ;
+    </script>
+</body>
+</html>

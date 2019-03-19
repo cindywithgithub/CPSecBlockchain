@@ -1,0 +1,42 @@
+	tableContent="[{"blckey":"f366bbae1476274cb27baed573070d7355edc6e62060bacf4d12d6616bffb1f70e31adafe25670a7a5dad23753563ac28939b91673c3f925c4166d67d35a3f13","counter":"101","enclosure":"upload/1508553422527.jpg","id":80,"inspector":"17876789009","modelnumber":"189998777675846578","productiontime":"2017-10-19","productname":"许纯烽","specifications":"购买家具","thisnumber":"1508553422538"},
+	{"blckey":"1e4308aac14e24f288516513ba379fa5242350c65522f31f5d6d7b5d0eca647fc68c9ac96916d9fa2febcf49534211cf1c4ceab3b5a1e8c7c0f5958b2da5736a","counter":"102","enclosure":"upload/1508557319671.jpg","id":81,"inspector":"17677789989","modelnumber":"187776777890987635","productiontime":"2017-10-19","productname":"高宏民","specifications":"购买楼房","thisnumber":"1508557319683"},
+	{"blckey":"103fbeb42950d928e6226162e01a0c52ecc4af47e9a413e61787ce599e8e168bcd454ac14f55df5eeee778ce76f80e18e76d03b918fbb6809fab9d36a2c22d7a","counter":"103","enclosure":"upload/1508563581962.jpg","id":82,"inspector":"12233345435","modelnumber":"111223456788767889","productiontime":"2017-10-17","productname":"叶伟巧","specifications":"购买汽车","thisnumber":"1508563581973"},
+	{"blckey":"cff3f3fb09b391c9ba856cb2c6751d9eb24e73b0ee64515746e1e1d4b674869aad15c0341397970b5c61a8c5615e60ce77e93e46c35f4545f84f5853429a5022","counter":"104","enclosure":"upload/1508570354433.jpg","id":83,"inspector":"13501005431","modelnumber":"5108827197908123389","productiontime":"1979-08-12","productname":"高坤","specifications":"别墅购买","thisnumber":"1508570354441"},
+	{"blckey":"5c2f34bb2eaa36d0fd2503720300b9ef8530805f620239a2430de0e81f6cba07f6d8b489c95b3ba74d4dedfee5a09a3222223c55ed96005a6ee6ffe45a36358f","counter":"105","enclosure":"upload/1510129015458.jpg","id":84,"inspector":"13555555555","modelnumber":"123568799","productiontime":"2017-11-09","productname":"高宏民","specifications":"买房","thisnumber":"1510129015480"},
+	{"blckey":"f366bbae1476274cb27baed573070d7355edc6e62060bacf4d12d6616bffb1f70e31adafe25670a7a5dad23753563ac28939b91673c3f925c4166d67d35a3f1","counter":"101","enclosure":"upload/1508553422527.jpg","id":85,"inspector":"17876789009","modelnumber":"189998777675846579","productiontime":"2017-10-19","productname":"sjh","specifications":"买橘子","thisnumber":"1508553422538"}]" ;
+
+$("body").unbind("click").on("click","#nav .btn-close",function (e) {
+			$("#pro-dele").one("show.bs.modal",function (event) {
+    			var button = $(event.relatedTarget);
+    			var id = button.data('whatever'); 
+    			$("#pro-dele .btn-primary").unbind("click").on('click',function () {
+                    $(this).unbind("click")
+                    $(this).addClass("disabled");
+    				$.ajax({
+    		    		type: "post",
+    		    		url: "/openPlatform/admin/deleteDom.do",
+    		    		data: {
+							'domtop.id': id,
+						},	
+    		    		success: function (data) {
+    		    			if ( data.Flag == "success") {
+                                layer.msg("删除成功！")
+    		    				button.parents('li#'+id).remove();
+    		    				if ( $('.navType li').length == 0 || $('.navType li.visited').length == 0 ) {
+							    	$('article button').hide()
+							    }
+    		    			} else{
+    		    				layer.msg("删除失败！")
+    		    			}
+    		    		},
+    					complete:function(){	//请求结束时
+                            $("#pro-dele .btn-primary").removeClass("disabled")
+    			    		$("#pro-dele").modal("hide");
+    				    },
+    		    		error: function () {
+    		    			layer.msg('请求出错，请检查网络！')
+    		    		}
+    		    	})
+    			})		    	
+    		})
+		})
